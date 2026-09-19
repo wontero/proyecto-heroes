@@ -3,8 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HeroesWeb.Data;
 
-public partial class HeroesContext(DbContextOptions<HeroesContext> options) : DbContext(options)
+public partial class HeroesContext : DbContext
 {
+    public HeroesContext(DbContextOptions<HeroesContext> options) : base(options)
+    {
+    }
     public virtual DbSet<Heroes> Heroes { get; set; }
     public virtual DbSet<SuperPoderes> SuperPoderes { get; set; }
 
